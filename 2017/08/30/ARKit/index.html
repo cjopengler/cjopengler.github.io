@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS开发,macOS开发," />
 
 
 
@@ -94,13 +94,36 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="九阳豆子的技术博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言 本篇会从广泛介绍到详细介绍,也就是从粗粒度向细粒度逐渐过度讲解.期间有任何问题请大家集思广益,多多指教.  主要内容 AR技术介绍  ARKit工作原理及流程介绍  ARKit简单代码实现  ARKit框架所有API介绍  ARScnView介绍  ARSession介绍  ARCamera介绍  ARKit捕捉平地  AR代码demo实现   AR技术介绍AR技术简介 增强现实技术（Aug">
+<meta name="keywords" content="iOS开发,macOS开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARKit技术初探">
+<meta property="og:url" content="http://yoursite.com/2017/08/30/ARKit/index.html">
 <meta property="og:site_name" content="九阳豆子的技术博客">
+<meta property="og:description" content="前言 本篇会从广泛介绍到详细介绍,也就是从粗粒度向细粒度逐渐过度讲解.期间有任何问题请大家集思广益,多多指教.  主要内容 AR技术介绍  ARKit工作原理及流程介绍  ARKit简单代码实现  ARKit框架所有API介绍  ARScnView介绍  ARSession介绍  ARCamera介绍  ARKit捕捉平地  AR代码demo实现   AR技术介绍AR技术简介 增强现实技术（Aug">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARKit_preview.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/447c7f0d7eed6cd1e4971d0fa19bef8401686383/ARKit/AR_Direction.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARKit-Model.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/Rendering_ARKit.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARDefines%402x.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARKit_UML.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARKit_session.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARWorldTrackingConfiguration.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/relationship_ARFrame.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/coordinate.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ar_workflow.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARDefines%402x.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/session_brige002.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/distance.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/distance2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/eulerAngles.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/plane_detective.gif">
+<meta property="og:updated_time" content="2017-08-30T07:26:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="九阳豆子的技术博客">
+<meta name="twitter:title" content="ARKit技术初探">
+<meta name="twitter:description" content="前言 本篇会从广泛介绍到详细介绍,也就是从粗粒度向细粒度逐渐过度讲解.期间有任何问题请大家集思广益,多多指教.  主要内容 AR技术介绍  ARKit工作原理及流程介绍  ARKit简单代码实现  ARKit框架所有API介绍  ARScnView介绍  ARSession介绍  ARCamera介绍  ARKit捕捉平地  AR代码demo实现   AR技术介绍AR技术简介 增强现实技术（Aug">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARKit_preview.png">
 
 
 
@@ -129,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/30/ARKit/"/>
 
 
 
 
 
-  <title>九阳豆子的技术博客</title>
+  <title>ARKit技术初探 | 九阳豆子的技术博客</title>
   
 
 
@@ -160,9 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,9 +266,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -277,9 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/30/ARKit/" itemprop="url">ARKit技术初探</a></h1>
+          <h1 class="post-title" itemprop="name headline">ARKit技术初探</h1>
         
 
         <div class="post-meta">
@@ -351,9 +370,7 @@
       
 
       
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><img src="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARKit_preview.png" alt=""></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><img src="https://raw.githubusercontent.com/sunyazhou13/sunyazhou13.github.io-images/master/ARKit/ARKit_preview.png" alt=""></p>
 <p>本篇会从广泛介绍到详细介绍,也就是从粗粒度向细粒度逐渐过度讲解.<br>期间有任何问题请大家集思广益,多多指教. </p>
 <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><ul>
 <li><strong>AR技术介绍</strong> </li>
@@ -638,8 +655,6 @@
 <p><a href="http://metalkit.org/2017/07/29/using-arkit-with-metal.html" target="_blank" rel="external">Using ARKit with Metal</a>  </p>
 <p><a href="http://www.jianshu.com/p/c97b230fa391" target="_blank" rel="external">坤小1~10篇</a></p>
 
-          
-        
       
     </div>
     
@@ -654,14 +669,22 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+            <a href="/tags/macOS开发/" rel="tag"># macOS开发</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -671,10 +694,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -682,6 +706,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -702,8 +730,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -765,6 +802,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">2.</span> <span class="nav-text">主要内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AR技术介绍"><span class="nav-number">2.1.</span> <span class="nav-text">AR技术介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AR技术简介"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">AR技术简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARKit概述及特点"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">ARKit概述及特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iOS11-如何支持ARKit"><span class="nav-number">2.1.0.3.</span> <span class="nav-text">iOS11 如何支持ARKit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Xcode-自带创建模板-多数都不用"><span class="nav-number">2.1.0.4.</span> <span class="nav-text">Xcode 自带创建模板(多数都不用)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARKit工作原理及流程介绍"><span class="nav-number">2.2.</span> <span class="nav-text">ARKit工作原理及流程介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要内容-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARKit工作原理"><span class="nav-number">2.2.2.</span> <span class="nav-text">ARKit工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ARSCNView与-ARSession关系"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">ARSCNView与 ARSession关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARFrame-与-ARWorldTrackingConfiguration"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">ARFrame 与 ARWorldTrackingConfiguration</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARKit-工作流程"><span class="nav-number">2.2.3.</span> <span class="nav-text">ARKit 工作流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARKit简单代码实现"><span class="nav-number">2.3.</span> <span class="nav-text">ARKit简单代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARKit框架所有API介绍"><span class="nav-number">2.4.</span> <span class="nav-text">ARKit框架所有API介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ARAnchor"><span class="nav-number">2.4.0.1.</span> <span class="nav-text">ARAnchor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARError"><span class="nav-number">2.4.0.2.</span> <span class="nav-text">ARError</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARFrame"><span class="nav-number">2.4.0.3.</span> <span class="nav-text">ARFrame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARHitTestResult"><span class="nav-number">2.4.0.4.</span> <span class="nav-text">ARHitTestResult</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARLightEstimate"><span class="nav-number">2.4.0.5.</span> <span class="nav-text">ARLightEstimate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARPlaneAnchor"><span class="nav-number">2.4.0.6.</span> <span class="nav-text">ARPlaneAnchor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARPointCloud"><span class="nav-number">2.4.0.7.</span> <span class="nav-text">ARPointCloud</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARConfiguration"><span class="nav-number">2.4.0.8.</span> <span class="nav-text">ARConfiguration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARSKView"><span class="nav-number">2.4.0.9.</span> <span class="nav-text">ARSKView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARScnView-重点介绍"><span class="nav-number">2.4.0.10.</span> <span class="nav-text">ARScnView 重点介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARSesson-重点介绍"><span class="nav-number">2.4.0.11.</span> <span class="nav-text">ARSesson 重点介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARCamera-重点介绍"><span class="nav-number">2.4.0.12.</span> <span class="nav-text">ARCamera 重点介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARKit捕捉平地"><span class="nav-number">2.4.0.13.</span> <span class="nav-text">ARKit捕捉平地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AR代码demo实现"><span class="nav-number">2.4.0.14.</span> <span class="nav-text">AR代码demo实现</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -878,10 +931,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
